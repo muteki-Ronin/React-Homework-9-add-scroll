@@ -10,4 +10,7 @@ export const useStyle = createUseStyles({
     textShadow: "#fff 1px 0 10px",
     minHeight: "350px",
   },
+  title: {
+    fontSize: "1.2rem",
+  },
 });
