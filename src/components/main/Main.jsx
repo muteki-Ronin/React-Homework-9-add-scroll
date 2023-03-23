@@ -46,9 +46,8 @@ export const Main = () => {
       dispatch(getPhotosScrollAction(page));
       setPage((prevState) => prevState + 1);
       setGetPage(false);
-      console.log(page);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [getPage]);
 
   useEffect(() => {
