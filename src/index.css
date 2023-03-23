@@ -1,0 +1,4 @@
+body {
+  background: radial-gradient(circle, rgba(221,251,63,1) 0%, rgba(252,70,70,1) 95%);
+  background-attachment: fixed;
+}
