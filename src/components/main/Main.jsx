@@ -23,7 +23,6 @@ import { Grid } from "@mui/material";
 
 export const Main = () => {
   const [page, setPage] = useState(1);
-  const [getPage, setGetPage] = useState(true);
   const classes = useStyle();
   const dispatch = useDispatch();
   const photos = useSelector(selectPhotos);
@@ -37,18 +36,14 @@ export const Main = () => {
         100 &&
       photos.length < 5000
     ) {
-      setGetPage(true);
+      setPage((prevState) => prevState + 1);
     }
   };
 
   useEffect(() => {
-    if (getPage) {
-      dispatch(getPhotosScrollAction(page));
-      setPage((prevState) => prevState + 1);
-      setGetPage(false);
-    }
+    dispatch(getPhotosScrollAction(page));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [getPage]);
+  }, [page]);
 
   useEffect(() => {
     document.addEventListener("scroll", handlerScroll);
